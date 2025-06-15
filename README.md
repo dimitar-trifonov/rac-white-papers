@@ -102,7 +102,10 @@ See [`rac/get-started.md`](./rac/get-started.md) for more guidance.
 
 ---
 
-## 🔗 Related Repositories (planned)
+## 🔗 Related Repositories
+
+1. [Motion Handled Music Player](https://github.com/dimitar-trifonov/motion-music-player-rac)
+   - A RaC implementation of a music player controlled by device motion sensors
 
 ---
 
@@ -112,5 +115,5 @@ MIT License — open to all, attribution appreciated.
 
 ---
 
-> _“RaC is not about replacing developers — it’s about making software feel more like dialogue and less like translation.”_
+> _"RaC is not about replacing developers — it's about making software feel more like dialogue and less like translation."_
 
