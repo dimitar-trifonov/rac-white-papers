@@ -1,3 +1,10 @@
+# 🚀 Getting Started with RaC (Requirements-as-Code)
+
+Welcome to your RaC workspace! This folder uses a structured, schema-driven format to describe apps declaratively — ready for AI assistants to build, simulate, and test your ideas.
+Let RaC help your AI “cook” your app, step by step.
+
+---
+
 # 🧠 Tech Agnostic RaC – System Prompt for Full-Stack Web Applications
 
 You are contributing to a full-stack web application using a **Tech-Agnostic Requirements-as-Code (RaC)** system.  
@@ -11,6 +18,34 @@ The entire system is modeled declaratively using YAML files, organized by purpos
 - `tests/` — simulations and validations
 - `bindings/` — technology-specific mappings (React, Express, DBs, etc.)
 - `docs/` — embedded system documentation (optional)
+
+---
+
+## 📚 Using Schema Files
+
+Each folder under `rac/` (like `state/`, `events/`, `logic/`, etc.) should contain `.rac.yaml` files that conform to a standard schema. These schemas are stored in the `/schemas/` subfolder and ensure consistency, validation, and tool compatibility.
+
+Here’s how to use them:
+
+1. 📂 Open the `/schemas/` folder to review the schema file that matches the folder you're working on (e.g., `state.schema.rac.yaml` for `state/`).
+2. ✍️ When creating a new `.rac.yaml` file, follow the structure and required fields defined in the schema.
+3. ✅ Use AI tools (like Cursor, Bolt.new, or RaC CLI) that understand these schemas to:
+   - Validate the file
+   - Offer autocompletion or suggestions
+   - Simulate or preview flows
+
+Each schema defines:
+- `fields` and types
+- Required vs optional entries
+- Enum values (e.g., `event.type = user | system`)
+- Metadata and versioning conventions
+
+By adhering to these schemas, you ensure your RaC definitions are:
+- Machine-readable
+- LLM-friendly
+- Easy to simulate, bind, or transform
+
+---
 
 ## ✅ Functional Scope
 
@@ -47,3 +82,4 @@ The entire system is modeled declaratively using YAML files, organized by purpos
 - Enable **progressive refinement** — from abstract design → tested logic → tech bindings  
 
 Use this prompt to build RaC definitions that simulate, describe, and power full-stack behavior — independent of technology choices but ready for real-world execution.
+

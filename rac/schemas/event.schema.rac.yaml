@@ -1,0 +1,47 @@
+id: event.schema
+version: 1.0
+type: object
+description: Schema for RaC event definitions
+fields:
+  - name: id
+    type: string
+    required: true
+  - name: type
+    type: enum
+    values: [user, system]
+    required: true
+  - name: triggers
+    type: list
+    items:
+      type: object
+      fields:
+        - name: source
+          type: string
+        - name: formId
+          type: string
+  - name: actions
+    type: list
+    items:
+      type: object
+      fields:
+        - name: type
+          type: enum
+          values: [validate, update, run, emit, create, delete]
+        - name: logic
+          type: string
+        - name: fields
+          type: list
+          items: { type: string }
+  - name: conditions
+    type: list
+    items: { type: string }
+  - name: version
+    type: string
+  - name: metadata
+    type: object
+    fields:
+      - name: createdBy
+        type: string
+      - name: tags
+        type: list
+        items: { type: string }

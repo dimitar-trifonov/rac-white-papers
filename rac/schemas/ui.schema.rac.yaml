@@ -1,0 +1,41 @@
+id: ui.schema
+version: 1.0
+type: object
+description: Schema for RaC UI definitions
+fields:
+  - name: id
+    type: string
+    required: true
+  - name: bindsTo
+    type: string
+  - name: components
+    type: list
+    items:
+      type: object
+      fields:
+        - name: type
+          type: string
+        - name: fields
+          type: list
+          items: { type: string }
+        - name: submitEvent
+          type: string
+  - name: views
+    type: list
+    items:
+      type: object
+      fields:
+        - name: path
+          type: string
+        - name: layout
+          type: string
+  - name: version
+    type: string
+  - name: metadata
+    type: object
+    fields:
+      - name: createdBy
+        type: string
+      - name: tags
+        type: list
+        items: { type: string }

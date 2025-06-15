@@ -1,96 +1,108 @@
 # Requirements-as-Code (RaC) White Papers
 
-This repository contains a growing collection of **practically grounded white papers** that define and explore the **Requirements-as-Code (RaC)** approach — a structured, declarative, and tech-agnostic method for improving software development in the age of Large Language Models (LLMs).
+This repository contains a growing collection of **practically grounded white papers** and supporting files for the **Requirements-as-Code (RaC)** approach — a structured, declarative, and tech-agnostic method for improving software development in the age of Large Language Models (LLMs).
+
+---
 
 ## 💡 What Is RaC?
 
-**RaC** emerged from hands-on experience building AI-assisted software and discovering the limitations of pure prompt-based workflows. It introduces an **extra abstraction layer** that improves collaboration, traceability, and reliability when working with LLMs to create real-world applications.
+**RaC** introduces an intermediate design layer between intent and implementation. Instead of scattering specifications across documents, UI mockups, code comments, and test cases, RaC consolidates them into a **single structured source of truth** — powered by `.rac.yaml` files.
 
- > _Think of RaC as if it is a recipe that helps the LLM cook your app._
+> _Think of RaC as a recipe that helps the LLM cook your app._
 
-Rather than being the result of a research grant or academic initiative, these white papers capture real developer insights — refined into a reusable framework.
-
----
-
-## 📄 Papers Included
-
-| White Paper # | Title                                   | Description |
-|---------------|-----------------------------------------|-------------|
-| 1             | `RaC Foundation`                        | Defines the RaC approach, its file structure, logic model, and practical benefits. |
-| -             | `get-started.md`                        | System prompt for starting a RaC project in Bolt.new or Cursor with ready folder structure. |
-| *(Upcoming)*  | `RaC for Business Systems`              | How RaC can structure workflows, roles, and non-code processes. |
-| *(Upcoming)*  | `RaC and Self-Evolving Systems`         | Vision paper for reflexive systems, RaC-as-a-Service, and agent-augmented logic editing. |
+This approach improves:
+- Traceability across stakeholders
+- Modularity and simulation before coding
+- Safe, auditable, tech-agnostic logic reuse
 
 ---
 
-## 📂 Structure
+## 📄 White Papers
+
+| White Paper # | Title                        | Description |
+|---------------|------------------------------|-------------|
+| 1             | `01-rac-foundation.md`       | Defines the RaC folder structure, schema logic, lifecycle integration, and its power as an LLM bridge. |
+| -             | `rac/get-started.md`         | A system prompt and starter guide to kick off RaC-based development inside Bolt.new, Cursor, or any AI IDE. |
+| *(Upcoming)*  | `02-business-systems.md`     | Using RaC to structure enterprise workflows, roles, and processes. |
+| *(Upcoming)*  | `03-self-evolving-systems.md`| Vision paper for reflexive RaC logic, hosted agents, and RaC-as-a-Service. |
+
+---
+
+## 📂 Repository Structure
 
 ```bash
 .
 ├── 01-rac-foundation.md
-├── get-started.md
+├── rac/
+│   ├── get-started.md
+│   ├── schemas/
+│   │   ├── state.schema.rac.yaml
+│   │   ├── event.schema.rac.yaml
+│   │   ├── logic.schema.rac.yaml
+│   │   ├── test.schema.rac.yaml
+│   │   ├── ui.schema.rac.yaml
+│   │   └── schema-manifest.rac.yaml
 ├── 02-business-systems.md         # (planned)
 ├── 03-self-evolving-systems.md    # (planned)
 ├── LICENSE
 └── README.md
 ```
 
-Each `.md` file is a standalone white paper meant to be read in full or referenced modularly.
+Each `.md` file is a standalone white paper.  
+The `rac/` folder contains schema definitions, templates, and documentation for building RaC systems.
 
 ---
 
-## 🚀 Who This Is For
+## 🚀 Who Is This For?
 
-These papers are designed for:
-
-- Developers and builders using LLMs in real-world workflows
-- Product teams exploring AI-native prototyping methods
-- Designers and PMs looking for structured ways to communicate logic
-- Toolmakers building the next generation of AI-coding platforms
+- Developers using LLMs to scaffold and test apps
+- Product teams building AI-native tools
+- Designers and PMs seeking executable logic specs
+- Teams tired of syncing docs, diagrams, and code
 
 ---
 
 ## ⚡ Quick Start
 
-To begin using RaC in **Bolt.new**, **Cursor**, or any LLM-based IDE:
+To begin using RaC:
 
-1. Open your project folder in the tool.
-2. Create a `rac` folder inside your project.
-3. Paste the `get-started.md` file into the `rac` folder.
-4. Ask the LLM to assist you with building your specific app.
-
-📌 **Example First Prompt**:
+1. Clone this repo and explore the `rac/` folder
+2. Open `rac/get-started.md` inside **Bolt.new**, **Cursor**, or your AI IDE
+3. Paste your goal as a prompt, e.g.:
 
 ```
-Could you help me to build a cooking recipe catalog app, following instructions in the rac folder?
+Could you help me build a peer feedback platform using the RaC folder as my design blueprint?
 ```
 
-The LLM will guide you through collecting requirements and generating `.rac.yaml` files for:
+The AI will assist in generating:
+- `state/` – core data structures
+- `events/` (or `services/`) – user/system actions
+- `logic/` – validation and business rules
+- `ui/` or `api/` – interface definitions
+- `tests/` – simulation of user/system behavior
+- `bindings/` – optional tech-specific generators
 
-- `state/`
-- `events/`
-- `logic/`
-- `ui/`
-- `tests/`
-- `bindings/`
-
-✅ Once your requirements are structured as RaC files, **ask the AI IDE to build your app** — using the declarative logic you've defined.
+✅ Once your `.rac.yaml` files are valid and connected, ask the LLM to scaffold the actual app.
 
 ---
 
-### 🧠 Best Practices
+## 🧠 Blueprinting Your Business Logic
 
-1. **Build the app incrementally.**
-2. If the app includes a UI, **start with a design system**:
-   - Prompt: `"Build a design system for my app and show it in a Design System page."`
-3. Then build the app **page by page**, e.g.:
-   - Prompt: `"Build the app home page."`
+RaC supports domain-specific extensions. Each business has its own logic — RaC helps you define it by answering:
 
-For more structure and reusable guidance, see: [get-started.md](./get-started.md)
+| Question                            | Goes in...     |
+|-------------------------------------|----------------|
+| What do we manage?                  | `state/`       |
+| What can users or systems do?       | `events/` or `services/` |
+| What must be true or forbidden?     | `logic/`       |
+| What should be visible or exposed?  | `ui/` or `api/`|
+| What should be simulated or tested? | `tests/`       |
+
+See [`rac/get-started.md`](./rac/get-started.md) for more guidance.
 
 ---
 
-## 🔄 Related Repositories (planned)
+## 🔗 Related Repositories (planned)
 
 ---
 
@@ -101,3 +113,4 @@ MIT License — open to all, attribution appreciated.
 ---
 
 > _“RaC is not about replacing developers — it’s about making software feel more like dialogue and less like translation.”_
+

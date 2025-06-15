@@ -1,0 +1,31 @@
+id: test.schema
+version: 1.0
+type: object
+description: Schema for RaC test case files
+fields:
+  - name: id
+    type: string
+    required: true
+  - name: setup
+    type: object
+  - name: input
+    type: object
+    fields:
+      - name: event
+        type: string
+      - name: data
+        type: object
+  - name: expected
+    type: object
+  - name: notes
+    type: string
+  - name: version
+    type: string
+  - name: metadata
+    type: object
+    fields:
+      - name: createdBy
+        type: string
+      - name: tags
+        type: list
+        items: { type: string }
