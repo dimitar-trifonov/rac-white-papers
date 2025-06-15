@@ -1,7 +1,7 @@
 id: logic.schema
-version: 1.0
+version: 1.1
 type: object
-description: Schema for RaC logic units
+description: Schema for RaC logic definitions. Logic is read-only and cannot mutate state.
 fields:
   - name: id
     type: string

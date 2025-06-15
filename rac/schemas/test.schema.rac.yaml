@@ -1,5 +1,5 @@
 id: test.schema
-version: 1.0
+version: 1.1
 type: object
 description: Schema for RaC test case files
 fields:
@@ -8,17 +8,33 @@ fields:
     required: true
   - name: setup
     type: object
-  - name: input
-    type: object
-    fields:
-      - name: event
-        type: string
-      - name: data
-        type: object
-  - name: expected
-    type: object
-  - name: notes
-    type: string
+  - name: testCases
+    type: list
+    items:
+      type: object
+      fields:
+        - name: id
+          type: string
+          required: true
+        - name: description
+          type: string
+          required: true
+        - name: setup
+          type: object
+        - name: input
+          type: object
+          fields:
+            - name: event
+              type: string
+            - name: data
+              type: object
+        - name: expected
+          type: object
+        - name: expectError
+          type: string
+          description: Optional expected error string emitted by logic
+        - name: notes
+          type: string
   - name: version
     type: string
   - name: metadata
