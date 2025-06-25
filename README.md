@@ -66,23 +66,26 @@ The `rac/` folder contains schema definitions, templates, and documentation for 
 
 To begin using RaC:
 
-1. Clone this repo and explore the `rac/` folder
-2. Open `rac/get-started.md` inside **Bolt.new**, **Cursor**, or your AI IDE
-3. Paste your goal as a prompt, e.g.:
-
-```
-Could you help me build a peer feedback platform using the RaC folder as my design blueprint?
-```
-
-The AI will assist in generating:
-- `state/` – core data structures
-- `events/` (or `services/`) – user/system actions
-- `logic/` – validation and business rules
-- `ui/` or `api/` – interface definitions
-- `tests/` – simulation of user/system behavior
-- `bindings/` – optional tech-specific generators
+1. **Add the `rac/` folder** from this repository into a new project in your preferred AI IDE
+2. **Open dialog with the LLM** and introduce your idea
+3. **Define scope collaboratively** with the AI to establish project boundaries
+4. **Ask LLM to generate a `reqs.md` file** for functional and non-functional requirements
+5. **Request a project plan** using `rac/get-started.md`, store it as `plan.md`
+6. **Build `.rac.yaml` structure** guided by the plan, creating:
+   - `state/` – core data structures
+   - `events/` (or `services/`) – user/system actions
+   - `logic/` – validation and business rules
+   - `ui/` or `api/` – interface definitions
+   - `tests/` – simulation of user/system behavior
+   - `bindings/` – optional tech-specific generators
+7. **Ask LLM regularly to verify schema correctness** of the generated files
 
 ✅ Once your `.rac.yaml` files are valid and connected, ask the LLM to scaffold the actual app.
+
+**Example prompt to start:**
+```
+Could you help me build an employee onboarding system using the RaC folder as my design blueprint?
+```
 
 ---
 
