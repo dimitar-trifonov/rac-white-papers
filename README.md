@@ -62,6 +62,47 @@ The `rac/` folder contains schema definitions, templates, and documentation for 
 
 ---
 
+## ⚙️ RaC, LangChain & GenKit – Ops in the LLM Ecosystem
+
+RaC isn't a competitor—it's the **declarative logic layer** that complements both prompt‑orchestration and production feature execution frameworks:
+
+| Ops Type     | Focus                                  | Key Tools                 | RaC's Role                                          |
+|--------------|----------------------------------------|---------------------------|-----------------------------------------------------|
+| **PromptOps** | Prompt chaining, agents, memory       | LangChain                 | Implements RaC‑defined logic flow in agents         |
+| **FeatureOps** | AI feature development and deployment | GenKit (Firebase GenKit) | Executes RaC‑defined flows in production, with observability & deployment support |
+| **LogicOps**  | Structured spec: events, logic, state | **RaC (Requirements-as-Code)** | Formalizes "what" the app must do, validated by schema and tests |
+
+### 🔄 Combined Flow Example
+
+1. **Define** in RaC:
+   - `events/order.create`
+   - `logic/order.validate`
+   - `tests/order-flow.test.rac.yaml`
+
+2. **Execute**:
+   - **LangChain** for conversational prompts (e.g. customer queries)
+   - **GenKit** to deploy order‑processing flows with monitoring and UI
+
+3. **Validate**:
+   - RaC ensures logic correctness across flows before deployment
+
+### 💼 Why This Matters
+
+In the LLM era, teams need **deterministic business logic** that survives prompt changes and model updates. RaC provides the missing "source of truth" that keeps your core business rules consistent across:
+- Different AI models and prompts
+- Multiple deployment environments
+- Team handoffs and documentation
+- Regulatory compliance requirements
+
+By positioning:
+- **LangChain** as **PromptOps** (dynamic prompt-based logic),
+- **GenKit** as **FeatureOps** (end-to-end AI feature deployment),
+- **RaC** as **LogicOps** (formal spec + deterministic logic),
+
+you show that RaC fills a critical gap: the **structured, testable logic layer** essential for robust LLM-driven systems.
+
+---
+
 ## ⚡ Quick Start
 
 To begin using RaC:
