@@ -1,5 +1,7 @@
 # Requirements-as-Code (RaC) White Papers
 
+> RaC/System-as-Code (SaC) is the AI-native programming layer for LLMs: prompts and context are data; RaC/SaC is the structured, auditable logic that turns intent into reliable action.
+
 This repository contains a growing collection of **practically grounded white papers** and supporting files for the **Requirements-as-Code (RaC)** approach — a structured, declarative, and tech-agnostic method for improving software development in the age of Large Language Models (LLMs).
 
 ---
