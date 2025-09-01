@@ -19,6 +19,24 @@ This approach improves:
 
 ---
 
+## 🎯 Toward a General‑Purpose Language of Systems
+
+RaC (Requirements‑as‑Code) and SaC (Systems‑as‑Code) aim to provide a general‑purpose, declarative systems language. In the same way that mathematics gives us a shared language for quantities, RaC/SaC offers a shared, declarative way to describe systems and processes: a schema‑driven layer where intent is declared once, simulated, audited, and bound to multiple runtimes.
+
+- **Architecture layers**
+  1. Specification (RaC) — declarative YAML across `state/`, `events/`, `logic/`, `tests/`, `ui/`, `bindings/`, `schemas/`
+  2. Bindings — map RaC units to runtimes (React, Firebase, SQL/GenKit, APIs)
+  3. Execution — orchestrator selects providers via QoS/policy/retries/fallbacks
+  4. Validation & Monitoring — simulation, audit logs, SLIs/SLOs
+- **Why now (AI‑native + auditable)**
+  - Prompts are ephemeral; RaC persists, versions, and tests intent
+  - Governance: RBAC, data residency, and audit can be first‑class
+  - Portability: brand‑agnostic via bindings and provider selection
+
+✅ Summary: Many processes described in RaC can be simulated, validated, and operationalized as services.
+
+---
+
 ## 📄 White Papers
 
 | White Paper # | Title                        | Description |
